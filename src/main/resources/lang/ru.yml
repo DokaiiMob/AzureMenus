@@ -1,0 +1,166 @@
+# +============================================================================+ #
+# |                      AzureMenus - Русская локализация                     | #
+# |                            Сервер AzureMyst                                | #
+# |                                                                            | #
+# |          Используйте <gradient:#8A2BE2:#00BFFF> для градиентов            | #
+# +============================================================================+ #
+
+# Префикс плагина
+prefix: '<gradient:#8A2BE2:#00BFFF>【AzureMenus】</gradient>'
+
+# Сообщения плагина
+plugin:
+  enabled: '<gradient:#8A2BE2:#00BFFF>AzureMenus включён</gradient> <gray>v{version}</gray>'
+  disabled: '<gradient:#8A2BE2:#00BFFF>AzureMenus отключён</gradient>'
+  reloaded: '<gradient:#8A2BE2:#00BFFF>AzureMenus перезагружен!</gradient>'
+  
+# Команды
+commands:
+  no-permission: '<red>У вас нет прав для выполнения этой команды!</red>'
+  player-only: '<red>Эта команда доступна только игрокам!</red>'
+  unknown-command: '<red>Неизвестная команда! Используйте:</red> <yellow>/azuremenus help</yellow>'
+  
+  reload:
+    description: 'Перезагрузить конфигурацию AzureMenus'
+    success: '<green>Конфигурация успешно перезагружена!</green>'
+    error: '<red>Ошибка при перезагрузке конфигурации!</red>'
+    
+  open:
+    description: 'Открыть меню'
+    usage: '/azuremenus open <меню> [игрок]'
+    menu-not-found: '<red>Меню "{menu}" не найдено!</red>'
+    opened-for-player: '<green>Меню "{menu}" открыто для игрока {player}</green>'
+    opened-for-self: '<green>Открыто меню "{menu}"</green>'
+    player-not-found: '<red>Игрок "{player}" не найден!</red>'
+    
+  list:
+    description: 'Показать список доступных меню'
+    header: '<gradient:#8A2BE2:#00BFFF>Доступные меню:</gradient>'
+    item: '<gray>•</gray> <white>{menu}</white> <dark_gray>({size} слотов)</dark_gray>'
+    empty: '<yellow>Нет доступных меню</yellow>'
+    
+  help:
+    description: 'Показать справку по командам'
+    header: '<gradient:#8A2BE2:#00BFFF>Команды AzureMenus:</gradient>'
+    footer: '<gray>Версия:</gray> <white>{version}</white>'
+
+# Меню
+menus:
+  loading: '<yellow>Загрузка меню...</yellow>'
+  error: '<red>Ошибка при загрузке меню!</red>'
+  closed: '<gray>Меню закрыто</gray>'
+  
+  errors:
+    invalid-size: '<red>Неверный размер меню: {size}</red>'
+    invalid-slot: '<red>Неверный слот: {slot}</red>'
+    permission-denied: '<red>У вас нет прав для открытия этого меню!</red>'
+    
+# Действия
+actions:
+  command:
+    blocked: '<red>Эта команда заблокирована!</red>'
+    error: '<red>Ошибка выполнения команды!</red>'
+    
+  economy:
+    insufficient-funds: '<red>Недостаточно средств! Требуется: {amount}</red>'
+    payment-success: '<green>Списано {amount} монет</green>'
+    payment-error: '<red>Ошибка при списании средств!</red>'
+    
+  permission:
+    denied: '<red>У вас нет необходимых прав!</red>'
+    required: '<red>Требуется право: {permission}</red>'
+
+# Предметы по умолчанию
+items:
+  close:
+    name: '<red>Закрыть</red>'
+    lore:
+      - '<gray>Нажмите, чтобы закрыть меню</gray>'
+      
+  back:
+    name: '<yellow>Назад</yellow>'
+    lore:
+      - '<gray>Нажмите, чтобы вернуться</gray>'
+      
+  next:
+    name: '<green>Далее</green>'
+    lore:
+      - '<gray>Нажмите для следующей страницы</gray>'
+      
+  previous:
+    name: '<green>Назад</green>'
+    lore:
+      - '<gray>Нажмите для предыдущей страницы</gray>'
+      
+  placeholder:
+    name: ' '
+    lore: []
+
+# Плейсхолдеры
+placeholders:
+  player-not-found: 'Игрок не найден'
+  invalid-placeholder: 'Неверный плейсхолдер'
+  
+  # Дата и время
+  date: '{date}'
+  time: '{time}'
+  datetime: '{date} {time}'
+  
+  # Сервер
+  server-name: 'AzureMyst'
+  online-players: '{online}'
+  max-players: '{max}'
+  tps: '{tps}'
+  
+  # Игрок
+  player-name: '{player}'
+  player-balance: '{balance}'
+  player-level: '{level}'
+  player-exp: '{exp}'
+
+# Анимации
+animations:
+  loading-dots:
+    - '<gray>Загрузка</gray>'
+    - '<gray>Загрузка.</gray>'
+    - '<gray>Загрузка..</gray>'
+    - '<gray>Загрузка...</gray>'
+    
+  gradient-cycle:
+    - '<gradient:#FF0000:#FF8000>●</gradient>'
+    - '<gradient:#FF8000:#FFFF00>●</gradient>'
+    - '<gradient:#FFFF00:#80FF00>●</gradient>'
+    - '<gradient:#80FF00:#00FF00>●</gradient>'
+    - '<gradient:#00FF00:#00FF80>●</gradient>'
+    - '<gradient:#00FF80:#00FFFF>●</gradient>'
+    - '<gradient:#00FFFF:#0080FF>●</gradient>'
+    - '<gradient:#0080FF:#0000FF>●</gradient>'
+
+# Интеграции
+integrations:
+  vault:
+    not-found: '<red>Плагин Vault не найден!</red>'
+    economy-disabled: '<red>Экономика отключена!</red>'
+    
+  placeholder-api:
+    not-found: '<yellow>PlaceholderAPI не найден - некоторые плейсхолдеры могут не работать</yellow>'
+    
+  aura-skills:
+    not-found: '<yellow>AuraSkills не найден - интеграция отключена</yellow>'
+    
+  kingdoms-x:
+    not-found: '<yellow>KingdomsX не найден - интеграция отключена</yellow>'
+
+# Ошибки
+errors:
+  config-load: '<red>Ошибка загрузки конфигурации!</red>'
+  menu-load: '<red>Ошибка загрузки меню: {menu}</red>'
+  file-not-found: '<red>Файл не найден: {file}</red>'
+  invalid-yaml: '<red>Неверный YAML формат в файле: {file}</red>'
+  permission-check: '<red>Ошибка проверки прав доступа</red>'
+  
+# Успех
+success:
+  config-saved: '<green>Конфигурация сохранена!</green>'
+  menu-created: '<green>Меню "{menu}" создано!</green>'
+  action-executed: '<green>Действие выполнено!</green>'

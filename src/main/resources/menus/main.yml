@@ -1,0 +1,166 @@
+# +============================================================================+ #
+# |                          Главное меню AzureMyst                            | #
+# |                                                                            | #
+# |               Пример основного меню с RPG элементами                       | #
+# +============================================================================+ #
+
+title: '<gradient:#8A2BE2:#00BFFF>AzureMyst</gradient> <gray>|</gray> <white>Главное меню</white>'
+size: 45
+sound: 'UI_BUTTON_CLICK'
+
+# Заполнение пустых слотов
+fill:
+  enabled: true
+  material: 'BLACK_STAINED_GLASS_PANE'
+  name: ' '
+
+# Элементы меню
+items:
+  # Информация о сервере
+  server_info:
+    slot: 4
+    material: 'NETHER_STAR'
+    enchanted: true
+    name: '<gradient:#8A2BE2:#00BFFF>Сервер AzureMyst</gradient>'
+    lore:
+      - '<gray>Добро пожаловать на наш сервер!</gray>'
+      - ''
+      - '<white>Версия:</white> <yellow>1.21.4</yellow>'
+      - '<white>Онлайн:</white> <green>%server_online%</green><gray>/<green>%server_max%</green>'
+      - '<white>Ваш уровень:</white> <gold>%player_level%</gold>'
+      - ''
+      - '<gradient:#32CD32:#FFD700>Приятной игры!</gradient>'
+    actions:
+      - type: 'message'
+        message: '<gradient:#8A2BE2:#00BFFF>Добро пожаловать, %player_name%!</gradient>'
+
+  # Телепорты
+  teleports:
+    slot: 20
+    material: 'ENDER_PEARL'
+    name: '<gradient:#00BFFF:#8A2BE2>Телепорты</gradient>'
+    lore:
+      - '<gray>Быстро перемещайтесь по миру</gray>'
+      - ''
+      - '<yellow>Нажмите для открытия меню</yellow>
+    actions:
+      - type: 'command'
+        commands:
+          - 'warp'
+
+  # Навыки (AuraSkills)
+  skills:
+    slot: 21
+    material: 'ENCHANTED_BOOK'
+    enchanted: true
+    name: '<gradient:#FFD700:#FF6347>Навыки</gradient>'
+    lore:
+      - '<gray>Развивайте свои способности</gray>'
+      - ''
+      - '<white>Ваши навыки:</white>'
+      - '<gray>• Добыча: <gold>%auraskills_mining%</gold></gray>'
+      - '<gray>• Сражение: <red>%auraskills_fighting%</red></gray>'
+      - '<gray>• Фермерство: <green>%auraskills_farming%</green></gray>'
+      - ''
+      - '<yellow>Нажмите для подробностей</yellow>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'skills'
+
+  # Королевства
+  kingdoms:
+    slot: 22
+    material: 'GOLDEN_SWORD'
+    item-flags:
+      - 'HIDE_ATTRIBUTES'
+    name: '<gradient:#FF6347:#FFD700>Королевства</gradient>'
+    lore:
+      - '<gray>Создавайте и управляйте королевствами</gray>'
+      - ''
+      - '<white>Ваше королевство:</white> <aqua>%kingdomsx_kingdom_name%</aqua>'
+      - '<white>Ранг:</white> <yellow>%kingdomsx_rank%</yellow>'
+      - ''
+      - '<yellow>Нажмите для управления</yellow>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'k menu'
+
+  # Магазин
+  shop:
+    slot: 23
+    material: 'EMERALD'
+    enchanted: true
+    name: '<gradient:#32CD32:#00FF00>Магазин</gradient>'
+    lore:
+      - '<gray>Покупайте и продавайте предметы</gray>'
+      - ''
+      - '<white>Ваш баланс:</white> <gold>%vault_eco_balance%</gold> <yellow>монет</yellow>'
+      - ''
+      - '<yellow>Нажмите для входа в магазин</yellow>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'shop'
+
+  # Задания
+  quests:
+    slot: 24
+    material: 'WRITABLE_BOOK'
+    name: '<gradient:#FF6347:#FF4500>Задания</gradient>'
+    lore:
+      - '<gray>Выполняйте квесты и получайте награды</gray>'
+      - ''
+      - '<white>Активные задания:</white> <green>%quests_active%</green>'
+      - '<white>Выполнено:</white> <yellow>%quests_completed%</yellow>'
+      - ''
+      - '<yellow>Нажмите для просмотра</yellow>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'quests'
+
+  # Информация о игроке
+  player_info:
+    slot: 31
+    material: 'PLAYER_HEAD'
+    skull-owner: '%player_name%'
+    name: '<gradient:#00BFFF:#8A2BE2>%player_name%</gradient>'
+    lore:
+      - '<gray>Информация о вашем персонаже</gray>'
+      - ''
+      - '<white>Уровень:</white> <gold>%player_level%</gold>'
+      - '<white>Опыт:</white> <green>%player_exp%</green>'
+      - '<white>Здоровье:</white> <red>%player_health%</red><gray>/<red>%player_max_health%</red>'
+      - '<white>Время в игре:</white> <aqua>%statistic_play_one_minute%</aqua>'
+      - ''
+      - '<yellow>Ваш профиль</yellow>'
+    actions:
+      - type: 'message'
+        message: '<green>Добро пожаловать, %player_name%!</green>'
+      - type: 'message'
+        message: '<gray>Время в игре: <white>%statistic_play_one_minute%</white></gray>'
+
+  # Настройки
+  settings:
+    slot: 40
+    material: 'REDSTONE_TORCH'
+    name: '<gradient:#FF4500:#FFD700>Настройки</gradient>'
+    lore:
+      - '<gray>Персональные настройки</gray>'
+      - ''
+      - '<yellow>Нажмите для настройки</yellow>'
+    actions:
+      - type: 'message'
+        message: '<yellow>Настройки пока недоступны!</yellow>'
+
+  # Закрыть меню
+  close:
+    slot: 44
+    material: 'BARRIER'
+    name: '<red>Закрыть</red>'
+    lore:
+      - '<gray>Закрыть это меню</gray>'
+    actions:
+      - type: 'close'

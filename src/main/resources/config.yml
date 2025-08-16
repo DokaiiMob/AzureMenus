@@ -1,0 +1,109 @@
+# +============================================================================+ #
+# |                         AzureMenus Configuration                           | #
+# |                          AzureMyst Server                                  | #
+# |                                                                            | #
+# |              Advanced menu system for Minecraft 1.21.4                   | #
+# |                    Plugin made by AzureMyst Team                           | #
+# +============================================================================+ #
+
+# Plugin version - DO NOT MODIFY
+config-version: 1
+
+# Default language for messages
+# Available: ru, en
+language: 'ru'
+
+# Debug mode - shows additional information in console
+debug: false
+
+# Menu update interval in ticks (20 ticks = 1 second)
+# This controls how often dynamic menus update
+menu-update-interval: 20
+
+# Sound settings
+sounds:
+  enabled: true
+  volume: 1.0
+  pitch: 1.0
+  
+# Default sounds for menu actions
+default-sounds:
+  open: 'UI_BUTTON_CLICK'
+  close: 'UI_BUTTON_CLICK'
+  click: 'UI_BUTTON_CLICK'
+  error: 'ENTITY_VILLAGER_NO'
+
+# Animation settings
+animations:
+  enabled: true
+  # Frame duration in ticks
+  frame-duration: 10
+  # Enable smooth color transitions
+  smooth-gradients: true
+
+# Integration settings
+integrations:
+  placeholder-api:
+    enabled: true
+  vault:
+    enabled: true
+  aura-skills:
+    enabled: true
+  kingdoms-x:
+    enabled: true
+
+# Performance settings
+performance:
+  # Cache menu data to improve performance
+  cache-menus: true
+  # Maximum number of menus to keep in cache
+  max-cache-size: 50
+  # Cache cleanup interval in minutes
+  cache-cleanup-interval: 30
+
+# Security settings
+security:
+  # Maximum menu size (must be multiple of 9, max 54)
+  max-menu-size: 54
+  # Maximum number of items per menu
+  max-items-per-menu: 54
+  # Allow console commands from menus
+  allow-console-commands: true
+  # Block dangerous commands
+  blocked-commands:
+    - 'op'
+    - 'deop'
+    - 'stop'
+    - 'restart'
+    - 'reload'
+
+# Azure theme settings
+azure-theme:
+  # Primary gradient colors (AzureMyst signature)
+  primary-color: '#8A2BE2'    # BlueViolet
+  secondary-color: '#00BFFF'  # DeepSkyBlue
+  
+  # Additional theme colors
+  accent-color: '#FF6347'     # Tomato
+  success-color: '#32CD32'    # LimeGreen  
+  warning-color: '#FFD700'    # Gold
+  error-color: '#FF4500'      # OrangeRed
+  
+  # Text colors
+  text-primary: '#FFFFFF'     # White
+  text-secondary: '#C0C0C0'   # Silver
+  text-muted: '#808080'       # Gray
+
+# Placeholder settings
+placeholders:
+  # Custom placeholders for AzureMyst
+  server-name: 'AzureMyst'
+  server-version: '1.21.4'
+  
+  # Date/time format
+  date-format: 'dd.MM.yyyy'
+  time-format: 'HH:mm:ss'
+  
+  # Number formatting
+  number-format: '#,###'
+  decimal-format: '#,##0.00'

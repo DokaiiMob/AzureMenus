@@ -1,0 +1,208 @@
+# +============================================================================+ #
+# |                          Меню телепортов AzureMyst                         | #
+# |                                                                            | #
+# |                  Быстрые перемещения по важным локациям                    | #
+# +============================================================================+ #
+
+title: '<gradient:#00BFFF:#8A2BE2>Телепорты</gradient> <gray>|</gray> <white>Быстрые перемещения</white>'
+size: 36
+sound: 'ENTITY_ENDERMAN_TELEPORT'
+update-interval: 100  # Обновлять каждые 5 секунд
+
+# Заполнение пустых слотов
+fill:
+  enabled: true
+  material: 'GRAY_STAINED_GLASS_PANE'
+  name: ' '
+
+items:
+  # Спавн
+  spawn:
+    slot: 10
+    material: 'BEACON'
+    enchanted: true
+    name: '<gradient:#FFD700:#FFA500>Спавн</gradient>'
+    lore:
+      - '<gray>Вернуться на главную площадь</gray>'
+      - '<gray>сервера AzureMyst</gray>'
+      - ''
+      - '<white>Координаты:</white> <aqua>0, 64, 0</aqua>'
+      - '<white>Безопасность:</white> <green>Полная</green>'
+      - ''
+      - '<yellow>Нажмите для телепортации</yellow>'
+      - '<gray>Стоимость: <green>Бесплатно</green></gray>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'spawn'
+      - type: 'message'
+        message: '<gradient:#00BFFF:#8A2BE2>Телепортация на спавн...</gradient>'
+
+  # Торговый район
+  market:
+    slot: 11
+    material: 'EMERALD_BLOCK'
+    name: '<gradient:#32CD32:#228B22>Торговый район</gradient>'
+    lore:
+      - '<gray>Центр торговли и коммерции</gray>'
+      - ''
+      - '<white>Доступно:</white>'
+      - '<gray>• Магазины игроков</gray>'
+      - '<gray>• Аукцион</gray>'
+      - '<gray>• Банк</gray>'
+      - ''
+      - '<yellow>Нажмите для телепортации</yellow>'
+      - '<gray>Стоимость: <yellow>50 монет</yellow></gray>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'warp market'
+
+  # Шахты
+  mines:
+    slot: 12
+    material: 'DIAMOND_PICKAXE'
+    item-flags:
+      - 'HIDE_ATTRIBUTES'
+    name: '<gradient:#87CEEB:#4682B4>Общественные шахты</gradient>'
+    lore:
+      - '<gray>Добывайте ресурсы в безопасной</gray>'
+      - '<gray>зоне с автообновлением</gray>'
+      - ''
+      - '<white>Доступные уровни:</white>'
+      - '<gray>• Уголь и железо</gray>'
+      - '<gray>• Золото и лазурит</gray>'
+      - '<gray>• Алмазы и редстоун</gray>'
+      - ''
+      - '<yellow>Нажмите для телепортации</yellow>'
+      - '<gray>Стоимость: <yellow>25 монет</yellow></gray>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'warp mines'
+
+  # Арена PvP
+  arena:
+    slot: 14
+    material: 'NETHERITE_SWORD'
+    item-flags:
+      - 'HIDE_ATTRIBUTES'
+    name: '<gradient:#FF4500:#DC143C>Арена PvP</gradient>'
+    lore:
+      - '<gray>Сражайтесь с другими игроками</gray>'
+      - '<gray>и доказывайте своё мастерство</gray>'
+      - ''
+      - '<white>Режимы:</white>'
+      - '<gray>• Дуэли 1vs1</gray>'
+      - '<gray>• Командные бои</gray>'
+      - '<gray>• Турниры</gray>'
+      - ''
+      - '<red>Внимание: PvP зона!</red>'
+      - ''
+      - '<yellow>Нажмите для телепортации</yellow>'
+      - '<gray>Стоимость: <yellow>100 монет</yellow></gray>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'warp arena'
+
+  # Ферма
+  farm:
+    slot: 15
+    material: 'WHEAT'
+    name: '<gradient:#90EE90:#228B22>Общественная ферма</gradient>'
+    lore:
+      - '<gray>Выращивайте культуры и разводите</gray>'
+      - '<gray>животных в общественной зоне</gray>'
+      - ''
+      - '<white>Доступно:</white>'
+      - '<gray>• Поля для посадки</gray>'
+      - '<gray>• Загоны для животных</gray>'
+      - '<gray>• Автоматические фермы</gray>'
+      - ''
+      - '<yellow>Нажмите для телепортации</yellow>'
+      - '<gray>Стоимость: <green>Бесплатно</green></gray>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'warp farm'
+
+  # Лес заготовок
+  forest:
+    slot: 16
+    material: 'OAK_LOG'
+    name: '<gradient:#8FBC8F:#556B2F>Лес заготовок</gradient>'
+    lore:
+      - '<gray>Добывайте древесину всех типов</gray>'
+      - '<gray>в автообновляющемся лесу</gray>'
+      - ''
+      - '<white>Доступные породы:</white>'
+      - '<gray>• Дуб, берёза, ель</gray>'
+      - '<gray>• Джунгли, акация</gray>'
+      - '<gray>• Тёмный дуб, вишня</gray>'
+      - ''
+      - '<yellow>Нажмите для телепортации</yellow>'
+      - '<gray>Стоимость: <green>Бесплатно</green></gray>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'warp forest'
+
+  # Домой (если у игрока есть дом)
+  home:
+    slot: 22
+    material: 'RED_BED'
+    name: '<gradient:#FF69B4:#FF1493>Дом</gradient>'
+    condition: '%player_homes% > 0'  # Показать только если есть дома
+    lore:
+      - '<gray>Вернуться в свой уютный дом</gray>'
+      - ''
+      - '<white>Ваши дома:</white> <gold>%player_homes%</gold>'
+      - ''
+      - '<yellow>Нажмите для телепортации</yellow>'
+      - '<gray>Стоимость: <green>Бесплатно</green></gray>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'home'
+
+  # Случайная телепортация
+  random_tp:
+    slot: 31
+    material: 'CHORUS_FRUIT'
+    name: '<gradient:#9932CC:#8A2BE2>Случайная телепортация</gradient>'
+    lore:
+      - '<gray>Телепортируйтесь в случайное</gray>'
+      - '<gray>место в дикой природе</gray>'
+      - ''
+      - '<white>Радиус:</white> <aqua>10,000 блоков</aqua>'
+      - '<white>Безопасность:</white> <yellow>Гарантирована</yellow>'
+      - ''
+      - '<yellow>Нажмите для телепортации</yellow>'
+      - '<gray>Стоимость: <yellow>200 монет</yellow></gray>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'rtp'
+
+  # Назад в главное меню
+  back:
+    slot: 27
+    material: 'ARROW'
+    name: '<yellow>Назад</yellow>'
+    lore:
+      - '<gray>Вернуться в главное меню</gray>'
+    actions:
+      - type: 'command'
+        commands:
+          - 'azuremenus open main'
+
+  # Закрыть
+  close:
+    slot: 35
+    material: 'BARRIER'
+    name: '<red>Закрыть</red>'
+    lore:
+      - '<gray>Закрыть меню телепортов</gray>'
+    actions:
+      - type: 'close'

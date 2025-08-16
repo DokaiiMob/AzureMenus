@@ -1,0 +1,44 @@
+name: AzureMenus
+version: ${project.version}
+description: Advanced menu system for AzureMyst Minecraft server
+author: AzureMyst Team
+website: https://github.com/AzureMyst/AzureMenus
+
+main: dev.azuremyst.azuremenus.AzureMenusPlugin
+api-version: 1.21
+folia-supported: false
+
+depend: []
+softdepend: 
+  - PlaceholderAPI
+  - Vault
+  - AuraSkills
+  - KingdomsX
+
+permissions:
+  azure.menus.*:
+    description: Access to all AzureMenus features
+    default: op
+    children:
+      azure.menus.reload: true
+      azure.menus.open.*: true
+      azure.menus.list: true
+  
+  azure.menus.reload:
+    description: Reload AzureMenus configuration
+    default: op
+  
+  azure.menus.open.*:
+    description: Access to open any menu
+    default: true
+  
+  azure.menus.list:
+    description: List available menus
+    default: true
+
+commands:
+  azuremenus:
+    description: Main AzureMenus command
+    usage: /<command> <reload|open|list> [args]
+    permission: azure.menus.*
+    aliases: [am, menu, menus]
